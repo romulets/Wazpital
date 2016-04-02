@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent2</item>
+    </style>
+    
+    <style name="HospitalState" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_toRightOf">@id/hospital_image</item>
+        <item name="android:layout_below">@id/name</item>
+    </style>
+
+    <style name="HospitalHeader" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/layout_bottom_shadow_border</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="HospitalDefaultButton" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/default_button</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="HospitalDetailTitle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:background">@drawable/border_bottom</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="HospitalDetailContent" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+
+</resources>

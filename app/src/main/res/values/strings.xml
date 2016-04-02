@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Wazpital</string>
+
+    <!-- MainActivity -->
+    <string name="main_hospital_image_description">Imagem de perfil do hospital</string>
+    <string name="main_no_connection">Você não está conectado à internet, algumas coisas podem apresentar mal funcionamento</string>
+    <string name="main_search">Buscar...</string>
+
+    <!-- DetailsActivity -->
+    <string name="details_hospital_not_found">Desculpe, mas não conseguimos mostrar esse hospital</string>
+    <string name="details_could_not_open_maps">Desculpe, mas não conseguimos abrir esse hospital no mapa</string>
+    <string name="details_could_not_call_phone">Desculpe, mas não conseguimos chamar esse número</string>
+    <string name="details_could_not_send_email">Desculpe, mas não conseguimos enviar esse e-mail</string>
+    <string name="details_could_not_open_browser">Desculpe, mas não conseguimos abrir o seu browser</string>
+    <string name="details_description">Descrição</string>
+    <string name="details_address">Endereço</string>
+    <string name="details_contacts">Mais Informações</string>
+    <string name="details_contact_email">E-mail:</string>
+    <string name="details_contact_phone">Telefone:</string>
+    <string name="details_contact_site">Site:</string>
+    <string name="details_see_maps">Ver no Mapa</string>
+    <string name="details_back_arrow">Voltar</string>
+
+    <!-- Hospital States -->
+    <string name="hospital_state_recommended">Recomendável</string>
+    <string name="hospital_state_complicated">Complicado</string>
+    <string name="hospital_state_bad">Não Recomendável</string>
+</resources>

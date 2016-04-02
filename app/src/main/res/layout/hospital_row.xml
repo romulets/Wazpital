@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+        android:background="@drawable/border_bottom"
+    android:id="@+id/hospital_content"
+    android:clickable="true">
+
+    <br.com.romulo.feedhospital.views.RoundedImageView
+        android:id="@+id/hospital_image"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/main_hospital_image_description"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_toRightOf="@id/hospital_image"
+        android:layout_toEndOf="@id/hospital_image"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/state"
+        style="@style/HospitalState"/>
+
+    <RelativeLayout
+        android:id="@+id/hospital_state_circle"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
