@@ -50,6 +50,7 @@ public class JsonHospitalLoader {
                 contactData = row.getJSONArray("contacts");
 
                 hospital = new Hospital();
+                hospital.setId(row.getInt("id"));
                 hospital.setName(row.getString("name"));
                 hospital.setDescrpition(row.getString("description"));
                 hospital.setImageURL(row.getString("imageURL"));

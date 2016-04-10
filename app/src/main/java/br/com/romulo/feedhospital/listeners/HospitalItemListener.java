@@ -25,6 +25,6 @@ public class HospitalItemListener implements OnItemClickListener <Hospital>{
     public void onItemClick(Hospital hospital) {
         Intent intent = new Intent(context, DetailsActivity.class);
         intent.putExtra(DetailsActivity.EXTRA_HOSPITAL, hospital);
-        context.startActivity(intent);
+        context.startActivityForResult(intent, DetailsActivity.RESULT_CODE);
     }
 }

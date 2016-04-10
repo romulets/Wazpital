@@ -2,6 +2,7 @@ package br.com.romulo.feedhospital.activities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
@@ -10,17 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
-
-import com.google.common.base.Predicates;
-import com.google.common.collect.Collections2;
-import com.google.common.collect.Lists;
-
-import java.security.Key;
 import java.util.ArrayList;
 
 import br.com.romulo.feedhospital.R;
@@ -52,6 +43,20 @@ public class MainActivity extends Activity implements android.location.LocationL
         location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if(location == null){
             location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == DetailsActivity.RESULT_CODE && resultCode == RESULT_OK && data != null) {
+            Hospital hospital = (Hospital) data.getSerializableExtra(DetailsActivity.EXTRA_HOSPITAL);
+            for(Hospital listedHospital : hospitals) {
+                if(listedHospital.getId() == hospital.getId()) {
+                    listedHospital.setVotedState(hospital.getVotedState());
+                }
+            }
         }
     }
 

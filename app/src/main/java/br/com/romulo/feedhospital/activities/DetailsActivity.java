@@ -1,11 +1,8 @@
 package br.com.romulo.feedhospital.activities;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
-import android.location.Location;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -31,9 +28,8 @@ import br.com.romulo.feedhospital.models.HospitalState;
  * Created by romul_000 on 25/03/2016.
  */
 public class DetailsActivity extends Activity {
-    public static final String ACTION = "br.com.romulo.feedhospital.DETAILS";
-    public static final String CATEGORY = "br.com.romulo.feedhospital.CATEGORY_DETAILS";
     public static final String EXTRA_HOSPITAL = "br.com.romulo.feedhospital.EXTRA_HOSPITAL";
+    public static final int RESULT_CODE = 478;
 
     private ImageView hospitalImage;
     private TextView hospitalName;
@@ -150,6 +146,7 @@ public class DetailsActivity extends Activity {
 
     public void doRecommendedAction(View view) {
         this.hospital.setVotedState(HospitalState.RECOMMENDED);
+        this.putExtra();
         Toast.makeText(this, "Obrigado por sua contribuição!", Toast.LENGTH_LONG).show();
         showRateButtons(view);
         this.changeVote();
@@ -157,6 +154,7 @@ public class DetailsActivity extends Activity {
 
     public void doComplicatedAction(View view) {
         this.hospital.setVotedState(HospitalState.COMPLICATED);
+        this.putExtra();
         Toast.makeText(this, "Obrigado por sua contribuição!", Toast.LENGTH_LONG).show();
         showRateButtons(view);
         this.changeVote();
@@ -164,9 +162,16 @@ public class DetailsActivity extends Activity {
 
     public void doBadAction(View view) {
         this.hospital.setVotedState(HospitalState.BAD);
+        this.putExtra();
         Toast.makeText(this, "Obrigado por sua contribuição!", Toast.LENGTH_LONG).show();
         showRateButtons(view);
         this.changeVote();
+    }
+
+    private void putExtra(){
+        Intent output = new Intent();
+        output.putExtra(DetailsActivity.EXTRA_HOSPITAL, this.hospital);
+        setResult(RESULT_OK, output);
     }
 
 }
