@@ -35,7 +35,7 @@
   },
   {
     "id": 2,
-    "name":"Santa Cruz",
+    "name":"Hospital Santa Cruz",
     "description":"Com mais de 40 planos de saúde conveniados, beneficiando quinze mil pacientes por mês, o Pronto Socorro do Hospital Santa Cruz destaca-se pelo atendimento privado de alto padrão.\n\nProjetado estrategicamente para atender com agilidade os casos de emergência e urgência, o Pronto Socorro localiza-se no mesmo piso do setor de imagem, hemodinâmica, centro cirúrgico, Unidade de Terapia Intensiva (UTI) e Unidade de Dor Torácica (UDT) - esta com médicos especializados no atendimento cardiológico emergencial. Este suporte garante que os médicos façam atendimento imediato às ocorrências prioritárias, onde o tempo é o principal aliado.",
     "imageURL":"http://www.hospitalsantacruz.com/images/stories/frentch2.jpg",
     "state":"1",
@@ -65,7 +65,7 @@
   },
   {
     "id": 3,
-    "name":"São Lucas",
+    "name":"Pronto Socorro São Lucas",
     "description":"O Pronto Atendimento do Hospital São Lucas mantém equipe médica de plantão durante 24 horas e, atende pacientes particulares e de convênios. Após a consulta, se houver necessidade, o paciente tem a segurança de contar com imediato internamento para a especialidade médica necessária, contando também com todo o apoio dos serviços complementares de auxilio diagnóstico e de UTI no próprio hospital. Com 60 anos de tradição no atendimento médico, coloca-se a disposição da comunidade.",
     "imageURL":"http://farm4.static.flickr.com/3760/19963469466_56df345f4e.jpg",
     "state":"2",
@@ -98,6 +98,100 @@
       {
         "type":"site",
         "content":"http://www.hslcuritiba.com.br/"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name":"Hospital Sugisawa",
+    "description":"O Pronto Atendimento do Hospital Sugisawa é um serviço de emergências clínicas de fácil acesso e preparado 24 hrs para o atendimento de seus pacientes.\nAtua empregando as melhores práticas emergenciais, voltando sua atenção para o acolhimento, atendimento humanizado e a segurança de seus clientes.\nPara oferecer a melhor assistência nos atendimentos de urgências e emergências clínicas, investe na estrutura médica, no treinamento de sua equipe e na utilização de estratégias que melhorem a agilidade e eficiência nos seus atendimentos.",
+    "imageURL":"http://www.consultprev.com.br/wp-content/uploads/2013/03/11_sugisawa.jpg",
+    "state":"1",
+    "address":{
+      "street":"Avenida Iguaçu",
+      "number":"1236",
+      "complement":null,
+      "reference": null,
+      "zipcode": " 80250-190",
+      "neighborhood": "Rebouças",
+      "city":"Curitiba",
+      "state":"PR",
+      "country":"Brasil",
+      "latitude":-25.4435945,
+      "longitude":-49.2731938
+    },
+    "contacts":[
+      {
+        "type":"phone",
+        "content":"(41) 3259-6500"
+      },
+      {
+        "type":"email",
+        "content":"sac@sugisawa.com.br"
+      },
+      {
+        "type":"site",
+        "content":"http://www.hospitalsugisawa.com.br/"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name":"Hospital IPO",
+    "description":"Em um edifício de aproximadamente 11.000 m² distribuídos em dez andares, cinco centros de tratamento e dois estacionamentos próprios, é especializada em ouvido, nariz, garganta, otorrinopediatria e otonorrinolaringologia. Possui mais de 70 médicos atendendendo diversas áreas como Anestesiologia, Cardiologia, dermatologia, fonoaudiologia, gastroenterologia, nutrição, odontologia, oftalmologia, plástica facial e pneumologia .Realiza exames, cirurgias, atendendo emergências 24 horas através de vários convênios",
+    "imageURL":"http://www.bandab.com.br/wp-content/uploads/2014/10/ipo.jpg",
+    "state":"0",
+    "address":{
+      "street":"Avenida República Argentina",
+      "number":"2069",
+      "complement":null,
+      "reference": null,
+      "zipcode": "80620-010",
+      "neighborhood": "Água Verde",
+      "city":"Curitiba",
+      "state":"PR",
+      "country":"Brasil",
+      "latitude":-25.4646919,
+      "longitude":-49.291239
+    },
+    "contacts":[
+      {
+        "type":"phone",
+        "content":"(41) 3314-1500"
+      },
+      {
+        "type":"site",
+        "content":"http://www.ipo.com.br"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name":"Hospital da XV",
+    "description":"A Instituição é referência em Ortopedia e Traumatologia em Curitiba há décadas e oferece atendimentos 24 horas nas especialidades de Ortopedia e Clínica Médica.\nHoje com um corpo clínico de profissionais capacitados, de várias especialidades, o Hospital XV tem orgulho em lhe atender bem, com a qualidade médica Hospitalar que você merece, prestando assistência de uma maneira simples e humanizada, levando o bem estar a todos que necessitam.\nO Hospital XV possui equipamentos que garantem um diagnóstico preciso e asseguram ao paciente um tratamento adequado e necessário à recuperação da sua saúde.",
+    "imageURL":"http://hospitalxv.com.br/wp-content/uploads/2013/11/foto-da-fachada-do-hospital-XV2-300x288.jpg",
+    "state":"0",
+    "address":{
+      "street":"Rua XV de Novembro",
+      "number":"2223",
+      "complement":null,
+      "reference": null,
+      "zipcode": "80045-125",
+      "neighborhood": "Alto da XV",
+      "city":"Curitiba",
+      "state":"PR",
+      "country":"Brasil",
+      "latitude":-25.426799,
+      "longitude":-49.2527848
+    },
+    "contacts":[
+      {
+        "type":"phone",
+        "content":" (41) 3218-2000"
+      },
+      {
+        "type":"site",
+        "content":"http://hospitalxv.com.br/"
       }
     ]
   }

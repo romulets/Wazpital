@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import br.com.romulo.feedhospital.models.Address;
 import br.com.romulo.feedhospital.models.Contact;
@@ -115,6 +116,8 @@ public class JsonHospitalLoader {
         }catch (JSONException e) {
             e.printStackTrace();
         }
+
+        Collections.sort(hospitals, new HospitalComparator());
         return hospitals;
     }
 

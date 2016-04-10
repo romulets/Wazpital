@@ -28,4 +28,8 @@ public enum HospitalState {
                 return R.string.hospital_state_bad;
         }
     }
+
+    public int getValue(){
+        return value;
+    }
 }

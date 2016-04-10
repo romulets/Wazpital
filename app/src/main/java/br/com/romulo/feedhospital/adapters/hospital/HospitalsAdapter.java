@@ -11,11 +11,13 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import br.com.romulo.feedhospital.R;
 import br.com.romulo.feedhospital.models.Hospital;
 import br.com.romulo.feedhospital.models.HospitalState;
 import br.com.romulo.feedhospital.listeners.OnItemClickListener;
+import br.com.romulo.feedhospital.util.HospitalComparator;
 
 /**
  * Created by romul_000 on 19/03/2016.
@@ -32,10 +34,6 @@ public class HospitalsAdapter extends RecyclerView.Adapter{
         this.listener = listener;
     }
 
-    public void setHospitals(ArrayList<Hospital> hospitals) {
-        this.hospitals = hospitals;
-    }
-
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(
@@ -44,6 +42,8 @@ public class HospitalsAdapter extends RecyclerView.Adapter{
 
         return new HospitalViewHolder(view);
     }
+
+
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
