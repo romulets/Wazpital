@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Wazpital</string>
+    <string name="google_maps_key">AIzaSyDVpg7Cnf-k4oqaqV7GJtyks7TbsV9KJsA</string>
 
     <!-- MainActivity -->
     <string name="main_hospital_image_description">Imagem de perfil do hospital</string>

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,7 +24,6 @@ import java.util.Locale;
 import br.com.romulo.feedhospital.R;
 import br.com.romulo.feedhospital.adapters.contact.ContactsApadpter;
 import br.com.romulo.feedhospital.listeners.ContactItemListener;
-import br.com.romulo.feedhospital.listeners.LocationListener;
 import br.com.romulo.feedhospital.models.Hospital;
 import br.com.romulo.feedhospital.models.HospitalState;
 
@@ -111,7 +111,7 @@ public class DetailsActivity extends Activity {
                     this.rateFab.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.complicatedYellow)));
                     break;
                 case BAD:
-                    this.rateFab.setImageResource(R.mipmap.ic_mood);
+                    this.rateFab.setImageResource(R.mipmap.ic_mood_bad);
                     this.rateFab.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.badRed)));
                     break;
             }

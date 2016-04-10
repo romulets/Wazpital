@@ -1,6 +1,8 @@
 package br.com.romulo.feedhospital.util;
 
 import android.content.Context;
+import android.location.Location;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,7 +22,19 @@ import br.com.romulo.feedhospital.models.HospitalState;
  */
 public class JsonHospitalLoader {
 
-    public static ArrayList<Hospital> load(Context context, ArrayList<Hospital> hospitals) {
+    private Context context;
+    private Location location;
+
+    public JsonHospitalLoader(Context context) {
+        this.context = context;
+    }
+
+    public JsonHospitalLoader(Context context, Location location) {
+        this(context);
+        this.location = location;
+    }
+
+    public ArrayList<Hospital> load(ArrayList<Hospital> hospitals) {
         Hospital hospital;
         Address address;
         Contact contact;
@@ -29,7 +43,7 @@ public class JsonHospitalLoader {
         int hospitalIndex, contactIndex, hospitalState;
 
         try{
-            hospitalData = new JSONArray(JsonHospitalLoader.getJson(context));
+            hospitalData = new JSONArray(this.getJson());
             for(hospitalIndex = 0; hospitalIndex < hospitalData.length(); hospitalIndex++){
                 row = hospitalData.getJSONObject(hospitalIndex);
                 addressRow = row.getJSONObject("address");
@@ -92,6 +106,8 @@ public class JsonHospitalLoader {
                     hospital.addContact(contact);
                 }
 
+                rateDistance(hospital);
+
                 hospitals.add(hospital);
             }
 
@@ -101,12 +117,12 @@ public class JsonHospitalLoader {
         return hospitals;
     }
 
-    public static ArrayList<Hospital> load(Context context) {
+    public ArrayList<Hospital> load() {
         ArrayList<Hospital> hospitals = new ArrayList<>();
-        return JsonHospitalLoader.load(context, hospitals);
+        return this.load(hospitals);
     }
 
-    private static  String getJson(Context context){
+    private String getJson(){
         String json;
         try {
             InputStream is = context.getAssets().open("hospitals.json");
@@ -122,4 +138,11 @@ public class JsonHospitalLoader {
         return json;
     }
 
+
+    private void rateDistance(Hospital hospital){
+        if(location != null) {
+            Log.i("Meu Log", "Latitude: "+location.getLatitude()+" | Longitude: "+location.getLongitude());
+        }
+        Log.i("Meu Log", "Sem Localidade");
+    }
 }
