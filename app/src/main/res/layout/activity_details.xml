@@ -66,6 +66,13 @@
 
                 <TextView
                     style="@style/HospitalDetailTitle"
+                    android:text="@string/details_distance"/>
+                <TextView
+                    android:id="@+id/hospital_distance"
+                    style="@style/HospitalDetailContent" />
+
+                <TextView
+                    style="@style/HospitalDetailTitle"
                     android:text="@string/details_description"/>
                 <TextView
                     android:id="@+id/hospital_description"

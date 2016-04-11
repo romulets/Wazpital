@@ -36,14 +36,8 @@ public class MainActivity extends Activity implements android.location.LocationL
     public void onCreate(Bundle savedInstaceState) {
         super.onCreate(savedInstaceState);
         this.setContentView(R.layout.activity_main);
+        this.initLocation();
         this.initComponents();
-
-        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10, 60000, this);
-        location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        if(location == null){
-            location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-        }
     }
 
     @Override
@@ -57,6 +51,16 @@ public class MainActivity extends Activity implements android.location.LocationL
                     listedHospital.setVotedState(hospital.getVotedState());
                 }
             }
+        }
+    }
+
+    private void initLocation() {
+        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10, 60000, this);
+        location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        if(location == null){
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10, 60000, this);
+            location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         }
     }
 
@@ -86,7 +90,6 @@ public class MainActivity extends Activity implements android.location.LocationL
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
-
     @Override
     public void onLocationChanged(Location location) {}
 
@@ -98,9 +101,5 @@ public class MainActivity extends Activity implements android.location.LocationL
 
     @Override
     public void onProviderDisabled(String provider) {}
-
-    public Location getLocation() {
-        return location;
-    }
 
 }

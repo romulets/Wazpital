@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
 import br.com.romulo.feedhospital.R;
@@ -33,6 +35,7 @@ public class DetailsActivity extends Activity {
 
     private ImageView hospitalImage;
     private TextView hospitalName;
+    private TextView hospitalDistance;
     private TextView hospitalState;
     private TextView hospitalDescription;
     private TextView hospitalAddress;
@@ -60,6 +63,7 @@ public class DetailsActivity extends Activity {
         }
 
         this.hospitalImage = (ImageView) findViewById(R.id.hospital_image);
+        this.hospitalDistance = (TextView) findViewById(R.id.hospital_distance);
         this.hospitalName = (TextView) findViewById(R.id.hospital_name);
         this.hospitalState = (TextView) findViewById(R.id.hospital_state);
         this.hospitalDescription = (TextView) findViewById(R.id.hospital_description);
@@ -76,6 +80,14 @@ public class DetailsActivity extends Activity {
 
     private void hydrateView() {
         Picasso.with(this).load(hospital.getImageURL()).into(this.hospitalImage);
+
+        if(hospital.getDistance() > -1) {
+            float distanceKm = hospital.getDistance().floatValue() / 1000;
+            hospitalDistance.setText(String.format("%.2f km", distanceKm));
+        } else {
+            hospitalDistance.setText(R.string.details_could_not_retrieve_location);
+        }
+
         hospitalName.setText(hospital.getName());
         hospitalState.setText(hospital.getState().getStringResource());
         hospitalDescription.setText(hospital.getDescrpition());

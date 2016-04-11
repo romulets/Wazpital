@@ -13,6 +13,8 @@
     <string name="details_could_not_call_phone">Desculpe, mas não conseguimos chamar esse número</string>
     <string name="details_could_not_send_email">Desculpe, mas não conseguimos enviar esse e-mail</string>
     <string name="details_could_not_open_browser">Desculpe, mas não conseguimos abrir o seu browser</string>
+    <string name="details_could_not_retrieve_location">Não foi possível resgatar a distância. Você ainda pode ver o mapa!</string>
+    <string name="details_distance">Distância Aproximada</string>
     <string name="details_description">Descrição</string>
     <string name="details_address">Endereço</string>
     <string name="details_contacts">Mais Informações</string>
@@ -23,7 +25,7 @@
     <string name="details_back_arrow">Voltar</string>
 
     <!-- Hospital States -->
-    <string name="hospital_state_recommended">Recomendável</string>
-    <string name="hospital_state_complicated">Complicado</string>
-    <string name="hospital_state_bad">Não Recomendável</string>
+    <string name="hospital_state_recommended">Recomendado</string>
+    <string name="hospital_state_complicated">Aceitável</string>
+    <string name="hospital_state_bad">Não Recomendado</string>
 </resources>

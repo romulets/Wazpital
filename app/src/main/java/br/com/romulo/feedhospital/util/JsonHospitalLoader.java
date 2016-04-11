@@ -55,18 +55,7 @@ public class JsonHospitalLoader {
                 hospital.setName(row.getString("name"));
                 hospital.setDescrpition(row.getString("description"));
                 hospital.setImageURL(row.getString("imageURL"));
-                hospitalState = row.getInt("state");
-
-                switch (hospitalState){
-                    case 0:
-                        hospital.setState(HospitalState.RECOMMENDED);
-                        break;
-                    case 1:
-                        hospital.setState(HospitalState.COMPLICATED);
-                        break;
-                    default:
-                        hospital.setState(HospitalState.BAD);
-                }
+                hospital.setState(HospitalState.fromInt(row.getInt("state")));
 
 
                 address = new Address();
@@ -142,11 +131,23 @@ public class JsonHospitalLoader {
         return json;
     }
 
-
     private void rateDistance(Hospital hospital){
         if(location != null) {
-            Log.i("Meu Log", "Latitude: "+location.getLatitude()+" | Longitude: "+location.getLongitude());
+            int R = 6371;
+            Double lat1 = hospital.getAddress().getLatitude();
+            Double lon1 = hospital.getAddress().getLongitude();
+            Double lat2 = location.getLatitude();
+            Double lon2 = location.getLongitude();
+
+            Double latDistance = Math.toRadians(lat2 - lat1);
+            Double lonDistance = Math.toRadians(lon2 - lon1);
+            Double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
+                    + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2))
+                    * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
+            Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+            double distance = R * c * 1000; // convert to meters
+            hospital.setDistance(distance);
         }
-        Log.i("Meu Log", "Sem Localidade");
     }
 }

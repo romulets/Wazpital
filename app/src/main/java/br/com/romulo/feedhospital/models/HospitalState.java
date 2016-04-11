@@ -32,4 +32,15 @@ public enum HospitalState {
     public int getValue(){
         return value;
     }
+
+    public static HospitalState fromInt(int hospitalState) {
+        switch (hospitalState){
+            case 0:
+                return RECOMMENDED;
+            case 1:
+                return COMPLICATED;
+            default:
+                return BAD;
+        }
+    }
 }
