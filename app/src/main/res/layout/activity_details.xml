@@ -1,63 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:animateLayoutChanges="true">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
+        android:id="@+id/rl_tmp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="150dp">
 
-        <RelativeLayout
+        <ImageView
+            android:id="@+id/hospital_image"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
-            <ImageView
-                android:id="@+id/hospital_image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/main_hospital_image_description"
-                android:scaleType="centerCrop" />
+            android:layout_height="match_parent"
+            android:contentDescription="@string/main_hospital_image_description"
+            android:scaleType="centerCrop" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_arrow_back"
-                android:contentDescription="@string/details_back_arrow"
-                android:padding="16dp"
-                android:background="@color/trasnparent"
-                android:onClick="back"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/trasnparent"
+            android:contentDescription="@string/details_back_arrow"
+            android:onClick="back"
+            android:padding="16dp"
+            android:src="@mipmap/ic_arrow_back" />
 
-            <TextView
-                android:id="@+id/hospital_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/white"
-                android:background="@color/fadedBlack"
-                android:textAppearance="?android:textAppearanceLarge"
-                android:layout_alignParentBottom="true"/>
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/hospital_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/fadedBlack"
+            android:padding="16dp"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_tmp"
+        android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/hospital_state"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingRight="16dp"
-            android:paddingLeft="16dp"
-            android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:textColor="@color/white"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textStyle="bold"/>
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <ScrollView
             android:id="@+id/hospital_scroll_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,14 +71,16 @@
 
                 <TextView
                     style="@style/HospitalDetailTitle"
-                    android:text="@string/details_distance"/>
+                    android:text="@string/details_distance" />
+
                 <TextView
                     android:id="@+id/hospital_distance"
                     style="@style/HospitalDetailContent" />
 
                 <TextView
                     style="@style/HospitalDetailTitle"
-                    android:text="@string/details_description"/>
+                    android:text="@string/details_description" />
+
                 <TextView
                     android:id="@+id/hospital_description"
                     style="@style/HospitalDetailContent" />
@@ -81,7 +88,8 @@
 
                 <TextView
                     style="@style/HospitalDetailTitle"
-                    android:text="@string/details_address"/>
+                    android:text="@string/details_address" />
+
                 <TextView
                     android:id="@+id/hospital_address"
                     style="@style/HospitalDetailContent" />
@@ -90,21 +98,22 @@
                     style="@style/HospitalDefaultButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/details_see_maps"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="8dp"
                     android:drawableLeft="@mipmap/ic_pin_drop"
                     android:drawableStart="@mipmap/ic_pin_drop"
-                    android:layout_gravity="right"
                     android:onClick="openMaps"
-                    android:layout_marginBottom="8dp"/>
+                    android:text="@string/details_see_maps" />
 
                 <TextView
                     style="@style/HospitalDetailTitle"
-                    android:text="@string/details_contacts"/>
+                    android:text="@string/details_contacts" />
+
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/contacts_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp" />
 
             </LinearLayout>
         </ScrollView>
@@ -114,54 +123,70 @@
         android:id="@+id/details_fab_rate"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_margin="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/rl_tmp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="-30dp"
         android:clickable="true"
         android:onClick="showRateButtons"
         android:src="@mipmap/ic_thumbs_up_down"
         app:backgroundTint="@color/colorAccent"
-        app:layout_anchor="@id/hospital_image"
-        app:layout_anchorGravity="bottom|right|end"/>
+        app:layout_anchor="@id/hospital_image" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/details_fab_recommended"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@mipmap/ic_mood"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="19dp"
         android:clickable="true"
+        android:layout_below="@+id/details_fab_rate"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:onClick="doRecommendedAction"
+        android:src="@mipmap/ic_mood"
         android:visibility="invisible"
         app:backgroundTint="@color/recommendedGreen"
         app:layout_anchor="@id/details_fab_rate"
-        app:layout_anchorGravity="bottom"
-        android:onClick="doRecommendedAction"/>
+        app:layout_anchorGravity="bottom" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/details_fab_complicated"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@mipmap/ic_sentiment_neutral"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
         android:clickable="true"
+        android:layout_below="@+id/details_fab_recommended"
+        android:onClick="doComplicatedAction"
+        android:src="@mipmap/ic_sentiment_neutral"
         android:visibility="invisible"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         app:backgroundTint="@color/complicatedYellow"
         app:layout_anchor="@id/details_fab_recommended"
-        app:layout_anchorGravity="bottom"
-        android:onClick="doComplicatedAction"/>
+        app:layout_anchorGravity="bottom" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/details_fab_bad"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@mipmap/ic_mood_bad"
+        android:layout_below="@+id/details_fab_complicated"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:clickable="true"
+        android:onClick="doBadAction"
+        android:src="@mipmap/ic_mood_bad"
         android:visibility="invisible"
         app:backgroundTint="@color/badRed"
         app:layout_anchor="@id/details_fab_complicated"
-        app:layout_anchorGravity="bottom"
-        android:onClick="doBadAction"/>
+        app:layout_anchorGravity="bottom" />
 
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

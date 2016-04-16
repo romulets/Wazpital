@@ -82,8 +82,8 @@ public class DetailsActivity extends Activity {
         Picasso.with(this).load(hospital.getImageURL()).into(this.hospitalImage);
 
         if(hospital.getDistance() > -1) {
-            float distanceKm = hospital.getDistance().floatValue() / 1000;
-            hospitalDistance.setText(String.format("%.2f km", distanceKm));
+            int distanceKm =  Math.round((hospital.getDistance().floatValue() / 1000));
+            hospitalDistance.setText(String.format("%d km", distanceKm));
         } else {
             hospitalDistance.setText(R.string.details_could_not_retrieve_location);
         }
