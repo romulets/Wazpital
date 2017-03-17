@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;

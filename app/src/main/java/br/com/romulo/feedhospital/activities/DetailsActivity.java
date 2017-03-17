@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -79,7 +79,7 @@ public class DetailsActivity extends Activity {
     }
 
     private void hydrateView() {
-        Picasso.with(this).load(hospital.getImageURL()).into(this.hospitalImage);
+        Glide.with(this).load(hospital.getImageURL()).into(this.hospitalImage);
 
         if(hospital.getDistance() > -1) {
             int distanceKm =  Math.round((hospital.getDistance().floatValue() / 1000));
